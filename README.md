@@ -2,12 +2,12 @@
 A powerful Spring Boot-based REST API that supports file upload/download, custom input validation, and user data processing — equipped with Swagger/OpenAPI for documentation and inspection.
 
 ✨ Features
-    ✅ Upload and download files (binary storage)
-    ✅ View all uploaded files via /all
-    ✅ Custom validation using annotations (e.g., no special characters)
-    ✅ Basic user management using DTOs and validation constraints
-    ✅ Live interactive API docs with Swagger UI
-    ✅ Layered architecture (Controller → Service → Repository)
+    -Upload and download files (binary storage)
+    -View all uploaded files via /all
+    -Custom validation using annotations (e.g., no special characters)
+    -Basic user management using DTOs and validation constraints
+    -Live interactive API docs with Swagger UI
+    -Layered architecture (Controller → Service → Repository)
 
 📦 Project Structure
 
@@ -47,17 +47,8 @@ POST	/postUser	Create user (validated DTO)
 GET	/hello	Sample hello endpoint
 GET	/add	Returns 2 + 4 = 6 (demo logic)
 
-🛡️ Custom Validation Example
+🛡️ Custom Validation
 
-@NoSpecialChar
-private String firstname;
-
-public class NoSpecialCharsValidator implements ConstraintValidator<NoSpecialChar, String> {
-    public static final String DISALLOWED_REGEX = ".*[<>@#\\\\$%&*].*";
-    public boolean isValid(String value, ConstraintValidatorContext context) {
-        return value == null || !value.matches(DISALLOWED_REGEX);
-    }
-}
 🔍 Swagger/OpenAPI Integration
 
 Swagger is available at:
